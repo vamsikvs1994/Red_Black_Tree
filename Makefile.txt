@@ -1,0 +1,15 @@
+#This make file is used to compile and generate the output file
+
+all: output
+
+output: main.o red_black_tree.o
+	g++ main.cpp red_black_tree.cpp -o output
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+red_black_tree.o :red_black_tree.cpp
+		g++ -c red_black_tree.cpp
+
+clean:
+	rm -rf *o output
